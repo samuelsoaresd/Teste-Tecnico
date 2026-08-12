@@ -42,15 +42,18 @@ Foi considerada uma janela móvel dos últimos 12 meses em curso (01/12/2023 a 2
 
 O faturamento bruto é recalculado a partir de order_items (qty * unit_price), e a quantidade de pedidos utiliza COUNT(DISTINCT ...).
 
+
 - **Desafio 2 — Crescimento de GMV**:
 O GMV foi representado por orders.total_value, com pedidos completed e delivered como definição operacional adotada para o exercício.
 
 O trimestre atual (Q4/2024) é parcial, com dados até 29/11/2024. A consulta compara esse período com o trimestre anterior e considera apenas sellers com pelo menos 50 pedidos em ambos os períodos.
 
+
 - **Desafio 3 — Descontos Abusivos**:
 O valor bruto e o desconto total são calculados a partir de order_items. Pedidos cancelled são excluídos e são identificados aqueles cujo desconto representa mais de 40% do valor bruto.
 
 Também foi incluída uma validação agregada dos resultados.
+
 
 - **Desafio 4 — Análise Anômala de Produtos**:
 Foi utilizada RANK() para identificar o item de maior valor unitário em cada pedido.
